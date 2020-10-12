@@ -8,14 +8,19 @@ function helloSayer(name, times){
             count++;
             console.log('Hello '+name)
             if(count==times){
-                resolve();
                 clearInterval(x);
+                resolve();
             }
         }, 100);
     })
 }
+
 helloSayer('Munish', 3).then(()=>{
-    helloSayer('Jatin', 3).then(()=>{
-        helloSayer('Rahul', 5);
-    });
+    helloSayer('Jatin', 5).then(()=>{
+        helloSayer('Rahul', 6)
+    })
 })
+
+// helloSayer('abc', 4)
+    // .then(()=> helloSayer('edf', 6))
+    // .then(()=> helloSayer('ghi', 7))
